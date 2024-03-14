@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "login", to: "users#login"
   get "signup", to: "users#signup"
+  post "signup", to: "users#create"
 end

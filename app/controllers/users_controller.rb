@@ -4,4 +4,13 @@ class UsersController < ApplicationController
 
   def signup
   end
+
+  def create
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 end
