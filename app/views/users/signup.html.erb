@@ -5,22 +5,23 @@
     <div class="shape"></div>
 </div>
 
-<form>
+<%= form_with model: @user do |form| %>
     <h3>Signup here</h3>
 
-    <label for="name">Full name</label>
-    <input placeholder="Enter full name" id="name" name="name" required autofocus>
+    <%= form.label :name, 'Full name' %>
+    <%= form.text_field :name, placeholder: 'Enter full name', required: true, autofocus: true %>
 
-    <label for="email">Email</label>
-    <input type="email" placeholder="Enter email address" id="email" name="email" required>
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: 'Enter email address', required: true %>
 
-    <label for="password">Password</label>
-    <input type="password" placeholder="Enter password" id="password" name="password" required>
+    <%= form.label :password %>
+    <%= form.password_field :password, placeholder: 'Enter password', required: true %>
 
-    <label for="password_confirmation">Confirm Password</label>
-    <input type="password" placeholder="Confirm password" id="password_confirmation" name="password_confirmation" required>
+    <%= form.label :password_confirmation, 'Confirm Password' %>
+    <%= form.password_field :password_confirmation, placeholder: 'Confirm password', required: true %>
 
-    <button>Log In</button>
+    <%= form.submit 'Signup', class: 'submit' %>
+
     <div class="social">
         <div class="go">
             <i class="fab fa-google"></i>
@@ -31,4 +32,4 @@
             Facebook
         </div>
     </div>
-</form>
+<% end %>
