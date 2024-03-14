@@ -1,0 +1,15 @@
+.error {
+  border: 1px solid #ff512f;
+  background-color: #f4d5c5;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.error li {
+  color: #ff512f;
+  list-style-position: inside;
+  list-style-type: circle;
+  font-size: 12px;
+  font-weight: 300;
+}

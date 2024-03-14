@@ -5,8 +5,10 @@
     <div class="shape"></div>
 </div>
 
-<%= form_with model: @user do |form| %>
+<%= form_with model: @user, url: signup_path do |form| %>
     <h3>Signup here</h3>
+
+    <%= render 'partials/validation_errors', errors: @user.errors if @user.errors.any? %>
 
     <%= form.label :name, 'Full name' %>
     <%= form.text_field :name, placeholder: 'Enter full name', required: true, autofocus: true %>
