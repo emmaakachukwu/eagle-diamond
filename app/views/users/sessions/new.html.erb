@@ -12,6 +12,7 @@
   <h3>Login here</h3>
 
   <%= render 'partials/error_messages', resource: resource %>
+  <%= render 'partials/notifications' %>
 
   <%= f.label :email %>
   <%= f.email_field :email, placeholder: 'Enter email address', required: true, autofocus: true, autocomplete: "email" %>

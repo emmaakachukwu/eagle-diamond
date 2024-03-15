@@ -1,0 +1,40 @@
+.notification {
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.notification li {
+  font-size: 12px;
+  font-weight: 300;
+  list-style-type: none;
+}
+
+.error {
+  border: 1px solid #79262d;
+  background-color: #f8d7da;
+}
+
+.error li {
+  color: #79262d;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.alert {
+  border: 1px solid #856404;
+  background-color: #fff3cd;
+}
+
+.alert li {
+  color: #856404;
+}
+
+.notice {
+  border: 1px solid #0c5460;
+  background-color: #d1ecf1;
+}
+
+.notice li {
+  color: #0c5460;
+}

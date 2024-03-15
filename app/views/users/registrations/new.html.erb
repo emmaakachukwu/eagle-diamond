@@ -9,6 +9,7 @@
   <h3>Signup here</h3>
 
   <%= render 'partials/error_messages', resource: resource %>
+  <%= render 'partials/notifications' %>
 
   <%= form.label :name, 'Full name' %>
   <%= form.text_field :name, placeholder: 'Enter full name', required: true, autofocus: true, autocomplete: "name" %>
