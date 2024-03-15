@@ -1,0 +1,39 @@
+<% content_for :title, 'Signup' %>
+
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+<%= form_for resource, as: resource_name, url: registration_path(resource_name) do |form| %>
+  <h3>Signup here</h3>
+
+  <%= render 'partials/error_messages', resource: resource %>
+
+  <%= form.label :name, 'Full name' %>
+  <%= form.text_field :name, placeholder: 'Enter full name', required: true, autofocus: true, autocomplete: "name" %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: 'Enter email address', required: true, autocomplete: "email" %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password,
+    placeholder: "Enter password #{"(#{@minimum_password_length} characters minimum)" if @minimum_password_length}",
+    required: true, autocomplete: "new-password" %>
+
+  <%= form.label :password_confirmation, 'Confirm Password' %>
+  <%= form.password_field :password_confirmation, placeholder: 'Confirm password', required: true, autocomplete: "new-password" %>
+
+  <%= form.submit 'Signup', class: 'submit' %>
+
+  <div class="social">
+    <div class="go">
+      <i class="fab fa-google"></i>
+      Google
+    </div>
+    <div class="fb">
+      <i class="fab fa-facebook"></i>
+      Facebook
+    </div>
+  </div>
+<% end %>
