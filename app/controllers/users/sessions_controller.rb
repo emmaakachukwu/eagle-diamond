@@ -19,15 +19,15 @@ module Users
     #   super
     # end
 
-    def after_sign_out_path_for(resource_or_scope)
-      session_path(resource_or_scope)
-    end
-
-    # protected
+    protected
 
     # If you have extra params to permit, append them to the sanitizer.
     # def configure_sign_in_params
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
+
+    def after_sign_out_path_for(resource_or_scope)
+      session_path(resource_or_scope)
+    end
   end
 end
