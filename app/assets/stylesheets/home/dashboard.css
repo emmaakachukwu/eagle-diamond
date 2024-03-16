@@ -3,9 +3,15 @@
   --font-color: #444;
 }
 
+*,
+:after,
+:before {
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  scrollbar-width: thin;
+}
+
 .accounts {
   background: #463350;
-  border-bottom-left-radius: 7px;
   padding: 10px;
 }
 
@@ -42,8 +48,6 @@
 
 .app {
   background: var(--background-color);
-  border-radius: 7px;
-  box-shadow: 0 11px 20px 0 rgba(0, 0, 0, 0.2);
   color: var(--font-color);
   display: grid;
   font-family: Nunito, sans-serif;
@@ -52,25 +56,6 @@
   line-height: 1.5;
   min-width: 780px;
   overflow: hidden;
-  position: relative;
-}
-
-.app.bonus-russia {
-  background: linear-gradient(
-    150deg,
-    #e9e9e9,
-    #e9e9e9 33%,
-    #112794 0,
-    #112794 66%,
-    #c51b0e 0,
-    #c51b0e
-  );
-}
-
-.app.bonus-russia * {
-  cursor: url(https://www.larousse.fr/encyclopedie/data/vignettes/1200048-Vladimir_Poutine.jpg)
-      0 0,
-    auto !important;
 }
 
 .app.weird-rotate {
@@ -99,17 +84,6 @@
   font-size: 1.6em;
 }
 
-.app.bonus-exit {
-  margin-top: 50%;
-  transform: scale(0) translateY(-200%) rotate(500deg);
-  transition: all, 1s ease;
-}
-
-.app.bonus-zoom {
-  transform: scale(3);
-  transition: transform, 1s ease;
-}
-
 .app__content {
   display: grid;
   grid-template-columns: auto minmax(300px, auto) 1fr;
@@ -119,52 +93,6 @@
   .app__content {
     grid-template-columns: auto 80px 1fr;
   }
-}
-
-.app-info {
-  background: #c5415b;
-  border-radius: 0 50px 50px 0;
-  font-family: Nunito, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  left: 0;
-  padding: 5px 10px;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-.app-info,
-.app-info a {
-  color: var(--background-color);
-}
-
-.app-info--right {
-  border-radius: 50px 0 0 50px;
-  cursor: pointer;
-  left: unset;
-  right: 0;
-}
-
-.app-cancel-bonuses {
-  background: #ff6a88;
-  border: 0;
-  border-radius: 200px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 2rem;
-  left: 50%;
-  outline: 0;
-  padding: 10px 50px;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
-  z-index: 999999;
-}
-
-.app-cancel-bonuses--active {
-  visibility: visible;
 }
 
 .mails {
@@ -180,18 +108,8 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, #ff9a8b, #ff6a88 55%, #ff99ac);
   height: 100vh;
   overflow: hidden;
-  padding: 2.5vw;
-}
-
-*,
-:after,
-:before {
-  box-sizing: border-box;
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-  scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
@@ -945,15 +863,6 @@ textarea {
 .top-action__item:hover {
   background: hsla(0, 0%, 50.2%, 0.1);
   color: var(--font-color);
-}
-
-.top-action__item:last-of-type {
-  border-radius: 0 7px 0 0;
-}
-
-.top-action__item:last-of-type:hover {
-  background: #ff6a88;
-  color: var(--background-color);
 }
 
 .input {

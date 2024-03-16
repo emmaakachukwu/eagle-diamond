@@ -6,4 +6,8 @@ class User < ApplicationRecord
          :confirmable, :trackable
 
   validates :name, presence: true
+
+  def avatar
+    "https://ui-avatars.com/api/?name=#{name}"
+  end
 end
