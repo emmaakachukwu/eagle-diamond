@@ -1,6 +1,7 @@
 :root {
   --background-color: #fff;
   --font-color: #444;
+  --primary-color: #463350;
 }
 
 *,
@@ -28,11 +29,11 @@
 }
 
 .accounts__item--active {
-  background: #ff6a88;
+  background: var(--primary-color);
 }
 
 .accounts__item--active:hover {
-  background: #ff6a88;
+  background: var(--primary-color);
 }
 
 .accounts__pill {
@@ -150,7 +151,7 @@ textarea {
 }
 
 .button--primary {
-  background: #ff6a88;
+  background: var(--primary-color);
   color: var(--background-color);
 }
 
@@ -246,7 +247,7 @@ textarea {
 }
 
 .message--active:before {
-  background: #ff6a88;
+  background: var(--primary-color);
   border-radius: 5px;
   bottom: 3px;
   content: "";
@@ -444,8 +445,13 @@ textarea {
 }
 
 .menu__item.active {
-  background: #ff6a88;
+  background: var(--primary-color);
   color: #fff;
+}
+
+.menu__item.active .pill {
+  background: hsla(0, 0%, 50.2%, 0.3);
+  color: var(--background-color);
 }
 
 .menu__item.active .menu__icon {
@@ -469,7 +475,7 @@ textarea {
 }
 
 .new__button {
-  background: #ff6a88;
+  background: var(--primary-color);
   border: 0;
   border-radius: 50px;
   color: var(--background-color);
