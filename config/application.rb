@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,7 +16,7 @@ module EagleDiamond
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -25,6 +27,6 @@ module EagleDiamond
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Custom default configs
-    config.app_name = ENV['APP_NAME']
+    config.app_name = ENV.fetch('APP_NAME', nil)
   end
 end
