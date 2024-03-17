@@ -2,9 +2,20 @@ require: rubocop-rails
 
 AllCops:
   NewCops: enable
+  Exclude:
+    - bin/*
+    - db/**/*
 
 Style/Documentation:
   Enabled: false
 
 Rails/LexicallyScopedActionFilter:
-  Enabled: false
+ Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+
+Layout/LineLength:
+  Exclude:
+    - config/**/*
