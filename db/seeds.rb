@@ -11,3 +11,5 @@
 #   end
 
 require_relative 'seeds/users/user'
+
+seed_users
