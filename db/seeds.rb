@@ -11,5 +11,7 @@
 #   end
 
 require_relative 'seeds/users/user'
+require_relative 'seeds/package'
 
 seed_users
+seed_packages

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :packages, dependent: :restrict_with_exception, inverse_of: :sender
+  has_many :sent_packages, class_name: 'Package', dependent: :nullify, inverse_of: :sender
+  has_many :recipients, dependent: :nullify
+  has_many :packages, through: :recipients
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
