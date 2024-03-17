@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  user: one
+  package: one
+  delivered_at: 2024-03-17 03:53:05
+  opened_at: 2024-03-17 03:53:05
+
+two:
+  email: MyString
+  user: two
+  package: two
+  delivered_at: 2024-03-17 03:53:05
+  opened_at: 2024-03-17 03:53:05
