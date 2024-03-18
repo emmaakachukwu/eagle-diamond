@@ -18,7 +18,11 @@
           <li class="top-menu-sub__item">Profile</li>
           <li class="top-menu-sub__item">Settings</li>
           <li class="top-menu-sub__item">
-            <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'top-menu-sub__link' %>
+            <%= link_to 'Sign out',
+                        destroy_user_session_path,
+                        data: { turbo_method: :delete },
+                        class: 'top-menu-sub__link'
+            %>
           </li>
         </ul>
       </div>
@@ -30,7 +34,7 @@
       <div class="menu__item active">
         <div>
           <i class="menu__icon fas fa-inbox"></i>
-          <span class="menu__label">Inbox</span>
+          <span class="menu__label">Packages</span>
         </div>
         <span class="menu-main__pill pill">3</span>
       </div>

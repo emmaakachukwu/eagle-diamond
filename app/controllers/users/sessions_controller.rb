@@ -26,8 +26,12 @@ module Users
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
 
-    def after_sign_out_path_for(resource_or_scope)
-      session_path(resource_or_scope)
+    def after_sign_in_path_for(_)
+      packages_path
+    end
+
+    def after_sign_out_path_for(_)
+      user_session_path
     end
   end
 end

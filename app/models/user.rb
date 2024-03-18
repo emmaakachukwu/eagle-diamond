@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :sent_packages, class_name: 'Package', dependent: :nullify, inverse_of: :sender
+  has_many :sent_packages,
+           class_name: 'Package',
+           dependent: :nullify,
+           inverse_of: :sender
   has_many :recipients, dependent: :nullify
-  has_many :packages, through: :recipients
+  has_many :packages,
+           -> { order(created_at: :desc).includes :recipients },
+           through: :recipients
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

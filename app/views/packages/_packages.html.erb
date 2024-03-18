@@ -1,0 +1,22 @@
+<div class="message-list scrollable">
+  <div class="scrollable__target">
+    <% packages.each do |package| %>
+      <% recipient = recipient_user package, current_user %>
+      <div class="<%= package_preview_css_class package, recipient %>">
+        <div class="message__actions">
+          <i class="message__icon far fa-square"></i>
+          <i class="message__icon fas fa-trash-alt"></i>
+          <i class="message__icon fas fa-archive"></i>
+        </div>
+        <div class="message__content">
+          <div class="message__exp">
+            <div><%= package.sender.name %></div>
+            <div class="date"><%= custom_format_date recipient.created_at %></div>
+          </div>
+          <div class="message__title"><%= package.title %></div>
+          <div class="message__expr">« <%= package.body[0...50] %> »</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

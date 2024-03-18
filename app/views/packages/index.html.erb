@@ -1,0 +1,24 @@
+<%
+  content_for :title, 'Packages'
+  content_for :stylesheet, 'dashboard'
+%>
+<% content_for :scripts do %>
+  <script src="/assets/custom/dashboard"></script>
+<% end %>
+<% content_for :styles do %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+<% end %>
+
+<div class="app">
+  <%= render 'partials/top' %>
+
+  <div class="app__content">
+    <%= render 'partials/accounts' %>
+    <%= render 'partials/side_nav' %>
+
+    <div class="mails">
+      <%= render 'packages', packages: current_user.packages %>
+      <%= render 'preview' %>
+    </div>
+  </div>
+</div>
