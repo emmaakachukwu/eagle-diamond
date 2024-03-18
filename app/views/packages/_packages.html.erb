@@ -11,7 +11,7 @@
         <div class="message__content">
           <div class="message__exp">
             <div><%= package.sender.name %></div>
-            <div class="date"><%= custom_format_date recipient.created_at %></div>
+            <div class="date"><%= recipient.created_at.to_readable %></div>
           </div>
           <div class="message__title"><%= package.title %></div>
           <div class="message__expr">« <%= package.body[0...50] %> »</div>
