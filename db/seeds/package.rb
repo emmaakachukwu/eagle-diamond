@@ -2,7 +2,7 @@
 
 def seed_packages
   users = user_configs
-  return if users.length < 2
+  return if users.size < 2
 
   sender = User.find_by email: users[0][:email]
   recipient = User.find_by email: users[1][:email]

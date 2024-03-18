@@ -36,7 +36,7 @@
           <i class="menu__icon fas fa-inbox"></i>
           <span class="menu__label">Packages</span>
         </div>
-        <span class="menu-main__pill pill">3</span>
+        <span class="menu-main__pill pill"><%= current_user.recipients.unopened.size %></span>
       </div>
       <div class="menu__item">
         <div>
