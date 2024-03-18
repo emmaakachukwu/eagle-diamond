@@ -19,3 +19,10 @@ Metrics/BlockLength:
 Layout/LineLength:
   Exclude:
     - config/**/*
+
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+    - method_call
