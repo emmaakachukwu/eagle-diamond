@@ -18,7 +18,7 @@
 
     <div class="mails">
       <%= render 'packages', packages: current_user.packages %>
-      <%= render 'preview' %>
+      <%= render 'preview', package: @package, recipient: @recipient if @package.present? %>
     </div>
   </div>
 </div>

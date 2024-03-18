@@ -1,82 +1,45 @@
 <div class="preview">
   <div class="preview-top">
-    <div class="preview__title">Am I on the Internet?</div>
-    <div> <i class="preview-top__icon fas fa-print"></i> <i
-      class="preview-top__icon fas fa-archive"></i> <i
-      class="preview-top__icon fas fa-ellipsis-h"></i> </div>
+    <div class="preview__title"><%= package.title %></div>
+    <div>
+      <i class="preview-top__icon fas fa-print"></i>
+      <i class="preview-top__icon fas fa-archive"></i>
+      <i class="preview-top__icon fas fa-ellipsis-h"></i>
+    </div>
   </div>
+
   <div class="scrollable">
     <div class="preview-content scrollable__target">
       <div class="preview-respond">
         <div class="preview-respond__head">
           <div class="profile-head">
-            <div class="profile-head__id"> <img class="profile-head__avatar"
-                                                src="https://pickaface.net/gallery/avatar/20130510_100741_226_grandpa.png"
-                                                alt="">
+            <div class="profile-head__id">
+              <img class="profile-head__avatar"
+                   src="<%= package.sender.avatar_url %>"
+                   alt="<%= package.sender.avatar_alt %>"
+              >
               <div>
-                <div class="profile-head__name">Papy Bear</div>
-                <div class="profile-head__mail">itsmepapy@gmail.com</div>
+                <div class="profile-head__name"><%= package.sender.name %></div>
+                <div class="profile-head__mail"><%= package.sender.email %></div>
               </div>
             </div>
-            <div class="date">Yesterday, 11:17</div>
+            <div class="date"><%= recipient.created_at.to_readable %></div>
           </div>
         </div>
         <div class="preview-respond__content">
-          <p class="paragraph">I plugged in the computer, and I'm not sure I plugged in the
-            internets properly. Do you think you could come and check me out? There are
-            little beeps in the black box in the living room, maybe I broke the internet, I
-            wouldn't want to do anything stupid!</p>
-          <p class="paragraph">Grandma tells me I'm an idiot and if I can see my messages it's
-            because it's okay, but you know, Grandma's not good with these things. And then
-            I'm suspicious, maybe the aliens aren't watching my internets? They would be
-            able to fit into the small box in the living room, Jack told me last week, when
-            we were drinking wine on the terrace... Do you think that's true? </p>
-          <p class="paragraph">Are you there?</p>
-          <p class="paragraph">Jean-Claude?</p>
-          <p class="paragraph">I call 911.</p>
-        </div>
-      </div>
-      <div class="preview-respond">
-        <div class="preview-respond__head">
-          <div class="profile-head">
-            <div class="profile-head__id"> <img class="profile-head__avatar"
-                                                src="https://creer.casecompany.paris/uploads/themes/original/5c9deb858a91e.png"
-                                                alt="">
-              <div>
-                <div class="profile-head__name">Jean-Claude</div>
-                <div class="profile-head__mail">jeanclaude@gmail.com</div>
-              </div>
-            </div>
-            <div class="date">Yesterday, 11:27</div>
-          </div>
-        </div>
-        <div class="preview-respond__content">
-          <p class="paragraph">Grandpa! Don't call 911!</p>
-          <p class="paragraph">Don't panic! they're e-mails, I only see them when they're
-            sent, I don't see your messages live! I'm coming to help you.</p>
-        </div>
-      </div>
-      <div class="preview-respond">
-        <div class="preview-respond__head">
-          <div class="profile-head">
-            <div class="profile-head__id"> <img class="profile-head__avatar"
-                                                src="https://pickaface.net/gallery/avatar/20130510_100741_226_grandpa.png"
-                                                alt="">
-              <div>
-                <div class="profile-head__name">Papy Bear</div>
-                <div class="profile-head__mail">itsmepapy@gmail.com</div>
-              </div>
-            </div>
-            <div class="date">Yesterday, 12:01</div>
-          </div>
-        </div>
-        <div class="preview-respond__content">
-          <p class="paragraph">Oh, my God, I was scared!</p>
+          <p class="paragraph"><%= package.body %></p>
         </div>
       </div>
     </div>
   </div>
-  <div class="preview-foot"> <button class="preview-foot__button button"><i
-    class="fas fa-reply-all"></i> Reply All</button> <button
-    class="preview-foot__button button"><i class="fas fa-reply"></i> Reply</button> </div>
+  <div class="preview-foot">
+    <button class="preview-foot__button button">
+      <i class="fas fa-reply-all"></i>
+      Reply All
+    </button>
+    <button class="preview-foot__button button">
+      <i class="fas fa-reply"></i>
+      Reply
+    </button>
+  </div>
 </div>

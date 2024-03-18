@@ -19,5 +19,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :packages, only: %i[index]
+  resources :packages, only: %i[index show]
 end

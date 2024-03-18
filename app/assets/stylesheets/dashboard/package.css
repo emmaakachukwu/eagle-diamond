@@ -221,6 +221,10 @@ textarea {
   background-color: hsla(0, 0%, 47.1%, 0.2);
 }
 
+.message-list a {
+  text-decoration: none;
+}
+
 .message {
   background: hsla(0, 0%, 50.2%, 0.08);
   border: 1px solid hsla(0, 0%, 50.2%, 0.2);
