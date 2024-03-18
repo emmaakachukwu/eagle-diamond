@@ -18,7 +18,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  def avatar
+  def avatar_url
     "https://ui-avatars.com/api/?name=#{name}"
+  end
+
+  def avatar_alt
+    "#{name.possessive} avatar"
   end
 end
