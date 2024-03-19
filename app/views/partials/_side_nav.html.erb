@@ -33,7 +33,7 @@
   <div>
     <div class="menu-main">
       <a href="<%= packages_path %>">
-        <div class="menu__item <%= 'active' if current_page?(packages_path) || (current_page?(package_path(params[:id])) if params[:id]) %>">
+        <div class="menu__item <%= 'active' if matches_current_page? packages_path %>">
           <div>
             <i class="menu__icon fas fa-inbox"></i>
             <span class="menu__label">Packages</span>
@@ -43,7 +43,7 @@
       </a>
 
       <a href="<%= sent_packages_path %>">
-        <div class="menu__item <%= 'active' if current_page?(sent_packages_path) || (current_page?(sent_package_path(params[:id])) if params[:id]) %> %>">
+        <div class="menu__item <%= 'active' if matches_current_page? sent_packages_path %>">
           <div>
             <i class="menu__icon fas fa-paper-plane"></i>
             <span class="menu__label">Sent Packages</span>
