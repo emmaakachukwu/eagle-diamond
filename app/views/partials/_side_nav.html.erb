@@ -32,13 +32,15 @@
 
   <div>
     <div class="menu-main">
-      <div class="menu__item active">
-        <div>
-          <i class="menu__icon fas fa-inbox"></i>
-          <span class="menu__label">Packages</span>
+      <a href="<%= packages_path %>">
+        <div class="menu__item <%= 'active' if current_page?(packages_path) || current_page?(package_path) %>">
+          <div>
+            <i class="menu__icon fas fa-inbox"></i>
+            <span class="menu__label">Packages</span>
+          </div>
+          <span class="menu-main__pill pill"><%= current_user.recipients.unopened.size %></span>
         </div>
-        <span class="menu-main__pill pill"><%= current_user.recipients.unopened.size %></span>
-      </div>
+      </a>
       <div class="menu__item">
         <div>
           <i class="menu__icon fas fa-paper-plane"></i>

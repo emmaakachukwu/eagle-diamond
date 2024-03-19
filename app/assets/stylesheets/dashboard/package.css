@@ -221,8 +221,13 @@ textarea {
   background-color: hsla(0, 0%, 47.1%, 0.2);
 }
 
-.message-list a {
+.message-list a,
+.menu-main a {
   text-decoration: none;
+}
+
+.menu-main a {
+  color: var(--font-color);
 }
 
 .message {
