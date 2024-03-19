@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   }
 
   resources :packages, only: %i[index show]
+  resources :sent_packages, only: %i[index show]
 end

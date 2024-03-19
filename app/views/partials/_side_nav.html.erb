@@ -33,7 +33,7 @@
   <div>
     <div class="menu-main">
       <a href="<%= packages_path %>">
-        <div class="menu__item <%= 'active' if current_page?(packages_path) || current_page?(package_path) %>">
+        <div class="menu__item <%= 'active' if current_page?(packages_path) || (current_page?(package_path(params[:id])) if params[:id]) %>">
           <div>
             <i class="menu__icon fas fa-inbox"></i>
             <span class="menu__label">Packages</span>
@@ -41,13 +41,16 @@
           <span class="menu-main__pill pill"><%= current_user.recipients.unopened.size %></span>
         </div>
       </a>
-      <div class="menu__item">
-        <div>
-          <i class="menu__icon fas fa-paper-plane"></i>
-          <span class="menu__label">Sent mail</span>
+
+      <a href="<%= sent_packages_path %>">
+        <div class="menu__item <%= 'active' if current_page?(sent_packages_path) || (current_page?(sent_package_path(params[:id])) if params[:id]) %> %>">
+          <div>
+            <i class="menu__icon fas fa-paper-plane"></i>
+            <span class="menu__label">Sent Packages</span>
+          </div>
+          <span class="menu-main__pill pill"><%= current_user.sent_packages.size %></span>
         </div>
-        <span class="menu-main__pill pill">78</span>
-      </div>
+      </a>
       <div class="menu__item">
         <div>
           <i class="menu__icon fas fa-pencil-alt"></i>

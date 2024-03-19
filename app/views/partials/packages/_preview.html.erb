@@ -23,7 +23,9 @@
                 <div class="profile-head__mail"><%= package.sender.email %></div>
               </div>
             </div>
-            <div class="date"><%= recipient.created_at.to_readable %></div>
+            <div class="date">
+              <%= recipient ? recipient.created_at.to_readable : package.created_at.to_readable %>
+            </div>
           </div>
         </div>
         <div class="preview-respond__content">

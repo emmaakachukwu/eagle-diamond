@@ -17,8 +17,8 @@
     <%= render 'partials/side_nav' %>
 
     <div class="mails">
-      <%= render 'packages', packages: current_user.packages %>
-      <%= render 'preview', package: @package, recipient: @recipient if @package.present? %>
+      <%= render 'partials/packages/list', packages: @packages %>
+      <%= render 'partials/packages/preview', package: @package, recipient: @recipient if @package.present? %>
     </div>
   </div>
 </div>
