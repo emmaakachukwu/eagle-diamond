@@ -7,7 +7,7 @@ class User < ApplicationRecord
            inverse_of: :sender
   has_many :recipients, dependent: :nullify
   has_many :packages,
-           -> { order(created_at: :desc).includes :recipients },
+           -> { includes :recipients },
            through: :recipients
 
   # Include default devise modules. Others available are:
