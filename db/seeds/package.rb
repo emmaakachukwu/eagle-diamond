@@ -13,13 +13,15 @@ def seed_packages
       title: "Package #{i + 1}",
       body: "Body: Package #{i + 1} - Details",
       sender: sender,
-      deliver_at: 1.day.from_now
+      deliver_at: 1.day.from_now,
+      recipients_attributes: [
+        { user: recipient, package: }
+      ]
     }
 
-    package = Package.find_or_create_by(title: package[:title]) do |p|
+    Package.find_or_create_by(title: package[:title]) do |p|
       p.update package
     end
-    Recipient.find_or_create_by!(user:recipient, package: package)
   end
 end
 
