@@ -90,34 +90,55 @@
     </button>
     <div class="new-mail">
       <div class="new-mail__top">
-        <div class="new-mail__title"> <span>Write a new mail from</span>
-          <div class="select"> <select class="select__item" name="">
-            <option value="">jeanclaude@gmail.com</option>
-            <option value="">him@gmail.com</option>
-          </select> <i class="select__arrow fas fa-sort-down"></i> </div>
-        </div> <i class="new-mail__close new-mail__toggle fas fa-times"></i>
-      </div>
-      <div class="new-mail-exp">
-        <div class="new-mail-exp__item">
-          <div class="new-mail-exp__label">To</div> <input placeholder="Enter email" type="text"
-                                                           class="new-mail-exp__input">
+        <div class="new-mail__title">
+          <span>Send a new package from</span>
+          <span class="user-email"><%= current_user.email %></span>
         </div>
-        <div class="new-mail-exp__item">
-          <div class="new-mail-exp__label">Object</div> <input placeholder="Enter mail object"
-                                                               type="text" class="new-mail-exp__input">
+        <i class="new-mail__close new-mail__toggle fas fa-times"></i>
+      </div>
+
+      <% resource = @resource || Package.new %>
+      <%= form_for resource do |f| %>
+        <%= render 'partials/error_messages', resource: %>
+        <div class="new-mail-exp">
+          <div class="new-mail-exp__item">
+            <%= f.label :recipients, class: 'new-mail-exp__label' %>
+            <%= f.text_field :recipients,
+                             value: '',
+                             placeholder: 'Enter recipient email (separate multiple emails with comma)',
+                             class: 'new-mail-exp__input',
+                             required: true
+            %>
+          </div>
+          <div class="new-mail-exp__item">
+            <%= f.label :title, class: 'new-mail-exp__label' %>
+            <%= f.text_field :title,
+                             placeholder: 'Enter package title',
+                             class: 'new-mail-exp__input'
+            %>
+          </div>
         </div>
-      </div>
-      <div class="new-mail__content"> <textarea
-        class="new-mail__message">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur eveniet corrupti deserunt ad cum inventore error architecto voluptatum temporibus eligendi asperiores placeat explicabo, consequatur molestias. Corrupti voluptatem commodi dicta dolorum.</textarea>
-      </div>
-      <div class="new-mail-foot">
-        <div class="new-mail-foot__insert"> <i class="new-mail-foot__icon far fa-file-archive"></i>
-          <i class="new-mail-foot__icon far fa-image"></i> <i
-          class="new-mail-foot__icon fas fa-paperclip"></i> </div>
-        <div class="new-mail-foot__actions"> <button class="button new-mail__toggle">Cancel</button>
-          <button class="button button--primary"> <i class="fas fa-paper-plane"></i></button>
+        <div class="new-mail__content">
+          <%= f.text_area :body,
+                          placeholder: 'Enter package body',
+                          class: 'new-mail__message',
+                          required: true
+          %>
         </div>
-      </div>
+        <div class="new-mail-foot">
+          <div class="new-mail-foot__insert">
+            <i class="new-mail-foot__icon far fa-file-archive"></i>
+            <i class="new-mail-foot__icon far fa-image"></i>
+            <i class="new-mail-foot__icon fas fa-paperclip"></i>
+          </div>
+          <div class="new-mail-foot__actions">
+            <button class="button new-mail__toggle">Cancel</button>
+            <button class="button button--primary" title="Send Package">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -19,6 +19,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :packages, only: %i[index show]
+  resources :packages, only: %i[index show create]
   resources :sent_packages, only: %i[index show]
 end

@@ -548,6 +548,10 @@ textarea {
   font-weight: 700;
 }
 
+.new-mail__top .user-email {
+  font-style: italic;
+}
+
 .new-mail-exp {
   background: hsla(0, 0%, 50.2%, 0.1);
   color: #636363;
